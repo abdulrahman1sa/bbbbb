@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.next/
+/site/.next/
+/site/node_modules/
+__pycache__/
+*.pyc
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
