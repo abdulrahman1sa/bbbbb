@@ -6,7 +6,7 @@ export async function GET() {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36',
             },
-            next: { revalidate: 600 }
+            next: { revalidate: 60 }
         });
 
         if (!response.ok) return new NextResponse('Error fetching feed', { status: 502 });
@@ -48,7 +48,7 @@ export async function GET() {
 
         return NextResponse.json(posts, {
             headers: {
-                'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=3600'
+                'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120'
             }
         });
     } catch (error) {
